@@ -28,6 +28,15 @@ export class MapComponent implements AfterViewInit {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://hr.linkedin.com/in/ivan-ani%C4%87-9a0b27182?trk=people-guest_people_search-card">Ivan Anić</a>'
     });
 
+    // Flip long and lat
+    zgKvartovi.features.forEach((kvart: any) => {
+      kvart["geometry"]["coordinates"][0].forEach((coo: any) => {
+        let helper = coo[0];
+        coo[0] = coo[1]
+        coo[1] = helper;
+      });
+    });
+
     L.geoJson(zgKvartovi).addTo(this.map);
 
     tiles.addTo(this.map);

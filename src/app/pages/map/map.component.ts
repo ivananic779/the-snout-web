@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
+import { HelperService } from 'src/app/services/helper.service';
 import { zgKvartovi } from 'src/app/vars/zagreb_kvartovi'; '../../vars/zagreb_kvartovi'
 
 @Component({
@@ -10,7 +11,9 @@ import { zgKvartovi } from 'src/app/vars/zagreb_kvartovi'; '../../vars/zagreb_kv
 export class MapComponent implements AfterViewInit {
   private map!: L.Map | L.LayerGroup<any>;
 
-  constructor() { }
+  constructor(
+    private helperService: HelperService
+  ) { }
 
   ngAfterViewInit(): void {
     this.initMap();
@@ -25,17 +28,10 @@ export class MapComponent implements AfterViewInit {
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
       minZoom: 3,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://hr.linkedin.com/in/ivan-ani%C4%87-9a0b27182?trk=people-guest_people_search-card">Ivan Anić</a>'
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://hr.linkedin.com/in/ivan-ani%C4%87-9a0b27182?trk=people-guest_people_search-card">Ivan Anić</a>; <a href="https://hr.linkedin.com/in/matija-%C5%A1iljeg-5a610a20b">Matija Šiljeg</a>'
     });
 
-    // Flip long and lat
-    zgKvartovi.features.forEach((kvart: any) => {
-      kvart["geometry"]["coordinates"][0].forEach((coo: any) => {
-        let helper = coo[0];
-        coo[0] = coo[1]
-        coo[1] = helper;
-      });
-    });
+    this.helperService.flipCoordinates(zgKvartovi);
 
     L.geoJson(zgKvartovi).addTo(this.map);
 

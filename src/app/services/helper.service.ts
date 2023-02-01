@@ -19,21 +19,15 @@ export class HelperService {
     });
   }
 
-  public setRandomDensity($geo_json_object: geojson.FeatureCollection) {
-    $geo_json_object.features.forEach((kvart: any) => {
-      kvart["properties"]["density"] = Math.floor(Math.random() * (1000 - 10 + 1) + 10);
-    });
-  }
-
   public style($feature: any) {
     let color =
-      $feature.properties.density > 1000 ? '#800026' :
-        $feature.properties.density > 500 ? '#BD0026' :
-          $feature.properties.density > 200 ? '#E31A1C' :
-            $feature.properties.density > 100 ? '#FC4E2A' :
-              $feature.properties.density > 50 ? '#FD8D3C' :
-                $feature.properties.density > 20 ? '#FEB24C' :
-                  $feature.properties.density > 10 ? '#FED976' :
+      $feature.properties.price_per_sqm > 3000 ? '#800026' :
+        $feature.properties.price_per_sqm > 2500 ? '#BD0026' :
+          $feature.properties.price_per_sqm > 2000 ? '#E31A1C' :
+            $feature.properties.price_per_sqm > 1500 ? '#FC4E2A' :
+              $feature.properties.price_per_sqm > 1000 ? '#FD8D3C' :
+                $feature.properties.price_per_sqm > 500 ? '#FEB24C' :
+                  $feature.properties.price_per_sqm > 0 ? '#FED976' :
                     '#FFEDA0';
 
     let test = {

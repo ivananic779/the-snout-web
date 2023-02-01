@@ -2,6 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
 import { HelperService } from 'src/app/services/helper.service';
 import { zgKvartovi } from 'src/app/vars/zagreb_kvartovi'; '../../vars/zagreb_kvartovi'
+import { zgKvartoviData } from 'src/app/vars_data/zagreb_kvartovi_data';
 
 @Component({
   selector: 'app-map',
@@ -33,9 +34,17 @@ export class MapComponent implements AfterViewInit {
 
     this.helperService.flipCoordinates(zgKvartovi);
 
-    this.helperService.setRandomDensity(zgKvartovi);
+    zgKvartovi.features.forEach((kvart: any) => {
+      zgKvartoviData.forEach((kvartData: any) => {
+        if (kvart.properties.name == kvartData.hood) {
+          kvart.properties.price_per_sqm = kvartData.price_per_sqm;
+          kvart.properties.count = kvartData.count;
+          console.log(kvart);
+        }
+      });
+    });
 
-    L.geoJson(zgKvartovi, {style: this.helperService.style}).addTo(this.map);
+    L.geoJson(zgKvartovi, { style: this.helperService.style }).addTo(this.map);
 
     tiles.addTo(this.map);
   }

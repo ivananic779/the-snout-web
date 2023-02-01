@@ -36,7 +36,7 @@ export class HelperService {
       opacity: 1,
       color: 'white',
       dashArray: '3',
-      fillOpacity: 0.6
+      fillOpacity: 0.4
     };
 
     return test;

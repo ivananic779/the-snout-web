@@ -18,27 +18,4 @@ export class HelperService {
       });
     });
   }
-
-  public style($feature: any) {
-    let color =
-      $feature.properties.price_per_sqm > 3000 ? '#800026' :
-        $feature.properties.price_per_sqm > 2500 ? '#BD0026' :
-          $feature.properties.price_per_sqm > 2000 ? '#E31A1C' :
-            $feature.properties.price_per_sqm > 1500 ? '#FC4E2A' :
-              $feature.properties.price_per_sqm > 1000 ? '#FD8D3C' :
-                $feature.properties.price_per_sqm > 500 ? '#FEB24C' :
-                  $feature.properties.price_per_sqm > 0 ? '#FED976' :
-                    '#FFEDA0';
-
-    let test = {
-      fillColor: color,
-      weight: 2,
-      opacity: 1,
-      color: 'white',
-      dashArray: '3',
-      fillOpacity: 0.4
-    };
-
-    return test;
-  }
 }

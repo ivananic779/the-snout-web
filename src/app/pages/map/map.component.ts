@@ -1,8 +1,12 @@
+import { HtmlParser } from '@angular/compiler';
 import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
 import { HelperService } from 'src/app/services/helper.service';
 import { zgKvartovi } from 'src/app/vars/zagreb_kvartovi'; '../../vars/zagreb_kvartovi'
 import { zgKvartoviData } from 'src/app/vars_data/zagreb_kvartovi_data';
+import { TooltipContent } from '../tooltip';
+
+
 
 export class PathOptions {
   stroke?: boolean | undefined;
@@ -20,7 +24,10 @@ export class PathOptions {
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss']
+  styleUrls: [
+    './map.component.scss'
+
+  ]
 })
 export class MapComponent implements AfterViewInit {
   private map!: L.Map | L.LayerGroup<any>;
@@ -56,6 +63,9 @@ export class MapComponent implements AfterViewInit {
     return pathOptionsObj;
   }
 
+
+
+
   private initMap(): void {
     this.map = L.map('map', {
       center: [45.815399, 15.966568],
@@ -63,7 +73,7 @@ export class MapComponent implements AfterViewInit {
     });
 
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 15,
+      maxZoom: 13,
       minZoom: 3,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://hr.linkedin.com/in/ivan-ani%C4%87-9a0b27182?trk=people-guest_people_search-card">Ivan Anić</a>; <a href="https://hr.linkedin.com/in/matija-%C5%A1iljeg-5a610a20b">Matija Šiljeg</a>'
     });
@@ -75,12 +85,28 @@ export class MapComponent implements AfterViewInit {
           kvart.properties.count = kvartData.count;
         }
       });
+
     });
 
     zgKvartovi.features.forEach((kvart: any) => {
-      var polygon = L.polygon(kvart.geometry.coordinates[0], this.stylePolygon(kvart)).bindTooltip('test').addTo(this.map);
+      var title = kvart.properties.name;
+      var row1 = kvart.properties.price_per_sqm;
+      var row2 = kvart.properties.count;
+      var content = new TooltipContent(title, row1, row2);
+      var polygon = L.polygon(kvart.geometry.coordinates[0], this.stylePolygon(kvart)).bindTooltip(content.napraviHTML(), {
+        permanent: false,
+        direction: 'right',
+        sticky: true,
+        offset: [30, 0],
+        opacity: 0.8
+        
+        // className: 'leaflet-tooltip-own'
+
+      }).addTo(this.map);
     });
 
     tiles.addTo(this.map);
   }
+
+
 }

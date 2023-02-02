@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as geojson from 'geojson';
+import { zgKvartovi } from '../vars/zagreb_kvartovi';
 
 @Injectable({
   providedIn: 'root'
@@ -19,3 +20,7 @@ export class HelperService {
     });
   }
 }
+
+
+
+

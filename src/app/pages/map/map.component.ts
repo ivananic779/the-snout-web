@@ -93,16 +93,42 @@ export class MapComponent implements AfterViewInit {
       var row1 = kvart.properties.price_per_sqm;
       var row2 = kvart.properties.count;
       var content = new TooltipContent(title, row1, row2);
-      var polygon = L.polygon(kvart.geometry.coordinates[0], this.stylePolygon(kvart)).bindTooltip(content.napraviHTML(), {
+      L.polygon(kvart.geometry.coordinates[0], this.stylePolygon(kvart)).bindTooltip(content.napraviHTML(), {
         permanent: false,
         direction: 'right',
         sticky: true,
         offset: [30, 0],
-        opacity: 0.8
-        
-        // className: 'leaflet-tooltip-own'
+        opacity: 0.8,
 
+        className: 'leaflet-tooltip-own'
+
+      }).on('click', (event: any) => {
+        var latlng = event.latlng;
+        var layerPoint = event.layerPoint;
+        var containerPoint = event.containerPoint;
+        var originalEvent = event.originalEvent;
+        console.log("klik info = " + latlng, layerPoint, containerPoint, originalEvent);
+        
+      }).on('dblclick', (event: any) => {
+        var latlng = event.latlng;
+        var layerPoint = event.layerPoint;
+        var containerPoint = event.containerPoint;
+        var originalEvent = event.originalEvent;
+        console.log("dblclick info = " + latlng, layerPoint, containerPoint, originalEvent);
+      // }).on('mouseover', (event: any) => {
+      //   var latlng = event.latlng;
+      //   var layerPoint = event.layerPoint;
+      //   var containerPoint = event.containerPoint;
+      //   var originalEvent = event.originalEvent;
+      //   console.log("mouseover info = " + latlng, layerPoint, containerPoint, originalEvent);
+      // }).on('mouseout', (event: any) => {
+      //   var latlng = event.latlng;
+      //   var layerPoint = event.layerPoint;
+      //   var containerPoint = event.containerPoint;
+      //   var originalEvent = event.originalEvent;
+      //   console.log("mouseout info = " + latlng, layerPoint, containerPoint, originalEvent);
       }).addTo(this.map);
+
     });
 
     tiles.addTo(this.map);
@@ -110,3 +136,10 @@ export class MapComponent implements AfterViewInit {
 
 
 }
+
+// na vrhu naslov
+// cijena po m2
+// broj oglasa (count)
+// graf > 
+
+//click, mouseover, double click, mouseout => eventi za dodat na tooltip console log samo sa svim opcijama.

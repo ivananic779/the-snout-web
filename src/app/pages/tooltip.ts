@@ -11,11 +11,9 @@ export class TooltipContent {
 
     napraviHTML() {
         return `
-        <h3 style="text-center">${this.title}</h3>
-        <strong>
-        <p style = "font-size: 150%"> m2 = ${this.row1} EUR</p>
-        <p style = "font-size: 130%">Aktivni oglasi = ${this.row2}</p>
-        </strong>
+        <h3>${this.title}</h3>
+        <p> m2  <span class="row1">${this.row1} EUR</span></p>
+        <p> broj oglasa  <span class="row2">${this.row2}</span></p>
       `;
     }
 }

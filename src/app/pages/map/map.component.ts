@@ -9,6 +9,8 @@ import { varijableEvenataMape } from '../../klase/varijableEvenataMape';
 
 
 
+
+
 export class PathOptions {
   stroke?: boolean | undefined;
   color?: string | undefined;
@@ -106,27 +108,7 @@ export class MapComponent implements AfterViewInit {
       }).on('click', (event: any) => {
         let info = new varijableEvenataMape(event.latlng, event.layerPoint, event.containerPoint, event.originalEvent);
         console.log("click info = " + info.latlng, info.layerPoint, info.containerPoint, info.originalEvent);
-//ili ova ?  
-      }).on('dblclick', (event: any) => {
-        var latlng = event.latlng;
-        var layerPoint = event.layerPoint;
-        var containerPoint = event.containerPoint;
-        var originalEvent = event.originalEvent;
-        console.log("dblclick info = " + latlng, layerPoint, containerPoint, originalEvent);
-//zakomentirano da ne console loga stalno na stranici u pozadini.
-
-        // }).on('mouseover', (event: any) => {
-        //   var latlng = event.latlng;
-        //   var layerPoint = event.layerPoint;
-        //   var containerPoint = event.containerPoint;
-        //   var originalEvent = event.originalEvent;
-        //   console.log("mouseover info = " + latlng, layerPoint, containerPoint, originalEvent);
-        // }).on('mouseout', (event: any) => {
-        //   var latlng = event.latlng;
-        //   var layerPoint = event.layerPoint;
-        //   var containerPoint = event.containerPoint;
-        //   var originalEvent = event.originalEvent;
-        //   console.log("mouseout info = " + latlng, layerPoint, containerPoint, originalEvent);
+        
       }).addTo(this.map);
 
     });

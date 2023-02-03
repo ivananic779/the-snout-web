@@ -4,7 +4,8 @@ import * as L from 'leaflet';
 import { HelperService } from 'src/app/services/helper.service';
 import { zgKvartovi } from 'src/app/vars/zagreb_kvartovi'; '../../vars/zagreb_kvartovi'
 import { zgKvartoviData } from 'src/app/vars_data/zagreb_kvartovi_data';
-import { TooltipContent } from '../tooltip';
+import { TooltipContent } from '../../klase/tooltip';
+import { varijableEvenataMape } from '../../klase/varijableEvenataMape';
 
 
 
@@ -96,37 +97,36 @@ export class MapComponent implements AfterViewInit {
       L.polygon(kvart.geometry.coordinates[0], this.stylePolygon(kvart)).bindTooltip(content.napraviHTML(), {
         permanent: false,
         direction: 'right',
-        sticky: true,
-        offset: [30, 0],
+        sticky: false,
+        offset: [0, 0],
         opacity: 0.8,
 
         className: 'leaflet-tooltip-own'
-
+//ova metoda ?
       }).on('click', (event: any) => {
-        var latlng = event.latlng;
-        var layerPoint = event.layerPoint;
-        var containerPoint = event.containerPoint;
-        var originalEvent = event.originalEvent;
-        console.log("klik info = " + latlng, layerPoint, containerPoint, originalEvent);
-        
+        let info = new varijableEvenataMape(event.latlng, event.layerPoint, event.containerPoint, event.originalEvent);
+        console.log("click info = " + info.latlng, info.layerPoint, info.containerPoint, info.originalEvent);
+//ili ova ?  
       }).on('dblclick', (event: any) => {
         var latlng = event.latlng;
         var layerPoint = event.layerPoint;
         var containerPoint = event.containerPoint;
         var originalEvent = event.originalEvent;
         console.log("dblclick info = " + latlng, layerPoint, containerPoint, originalEvent);
-      // }).on('mouseover', (event: any) => {
-      //   var latlng = event.latlng;
-      //   var layerPoint = event.layerPoint;
-      //   var containerPoint = event.containerPoint;
-      //   var originalEvent = event.originalEvent;
-      //   console.log("mouseover info = " + latlng, layerPoint, containerPoint, originalEvent);
-      // }).on('mouseout', (event: any) => {
-      //   var latlng = event.latlng;
-      //   var layerPoint = event.layerPoint;
-      //   var containerPoint = event.containerPoint;
-      //   var originalEvent = event.originalEvent;
-      //   console.log("mouseout info = " + latlng, layerPoint, containerPoint, originalEvent);
+//zakomentirano da ne console loga stalno na stranici u pozadini.
+
+        // }).on('mouseover', (event: any) => {
+        //   var latlng = event.latlng;
+        //   var layerPoint = event.layerPoint;
+        //   var containerPoint = event.containerPoint;
+        //   var originalEvent = event.originalEvent;
+        //   console.log("mouseover info = " + latlng, layerPoint, containerPoint, originalEvent);
+        // }).on('mouseout', (event: any) => {
+        //   var latlng = event.latlng;
+        //   var layerPoint = event.layerPoint;
+        //   var containerPoint = event.containerPoint;
+        //   var originalEvent = event.originalEvent;
+        //   console.log("mouseout info = " + latlng, layerPoint, containerPoint, originalEvent);
       }).addTo(this.map);
 
     });
@@ -136,10 +136,19 @@ export class MapComponent implements AfterViewInit {
 
 
 }
-
+//****************************zadatak***********************
 // na vrhu naslov
 // cijena po m2
 // broj oglasa (count)
 // graf > 
-
 //click, mouseover, double click, mouseout => eventi za dodat na tooltip console log samo sa svim opcijama.
+// ****************************GRAF************************* 
+// Remark: Making tooltip interactive makes sense only if it is permanently displayed 
+//(option permanent: true) sta je nama false. Making nonpermanent tooltip interactive will eiher not work 
+//(when tooltip is completely outside marker) or will interfere with event processing for
+// marker (when tooltip covers marker).
+// ako dodamo graf na tooltip na klik ne moze. mozemo dodat samo ko jos jedan html element ali ne zeli ga 
+// zvat ko komponentu  <komponenta></komponenta> vidi dole.
+
+// ngx chart usage info : https://www.npmjs.com/package/ngx-line-chart
+// <ngx-line-chart [dataSets]="myDataSets" [xLabelFunction]="formXAxisValue.bind(this)"></ngx-line-chart>

@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+//////////////tooltip styling//////////
+.leaflet-tooltip {
+    background-color: #FF7B54 !important;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+;
+
+.leaflet-tooltip>h3 {
+    color: #fbff00 !important;
+}
+
+;
+
+.leaflet-tooltip>p {
+    color: #ffffff !important;
+    font-size: large !important;
+    font-weight: 800;
+    ;
+}
+
+;
+
+.leaflet-tooltip>p .row1 {
+    color: #fbff00 !important;
+}
+
+.leaflet-tooltip>p .row2 {
+    color: #fbff00 !important;
+}
+
+///////////////////////////////////////

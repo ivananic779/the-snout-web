@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { MapComponent } from './pages/map/map.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
     component: MapComponent,
   }, {
     path: 'test',
-    component: LineChartComponent,
+    component: DialogComponent,
   },
 
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
+import { zgKvartoviData } from '../vars_data/zagreb_kvartovi_data';
 
 @Component({
   selector: 'app-dialog',

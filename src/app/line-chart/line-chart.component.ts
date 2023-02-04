@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { zgKvartoviData } from '../vars_data/zagreb_kvartovi_data';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { BrowserModule } from '@angular/platform-browser';
 import { Color, ScaleType } from '@swimlane/ngx-charts';
 
 

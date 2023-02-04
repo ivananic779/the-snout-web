@@ -6,6 +6,7 @@ import { zgKvartovi } from 'src/app/vars/zagreb_kvartovi'; '../../vars/zagreb_kv
 import { zgKvartoviData } from 'src/app/vars_data/zagreb_kvartovi_data';
 import { TooltipContent } from '../../klase/tooltip';
 import { varijableEvenataMape } from '../../klase/varijableEvenataMape';
+import { DialogComponent } from '../../dialog/dialog.component';
 
 
 
@@ -108,6 +109,7 @@ export class MapComponent implements AfterViewInit {
       }).on('click', (event: any) => {
         let info = new varijableEvenataMape(event.latlng, event.layerPoint, event.containerPoint, event.originalEvent);
         console.log("click info = " + info.latlng, info.layerPoint, info.containerPoint, info.originalEvent);
+        
         
       }).addTo(this.map);
 

@@ -103,14 +103,11 @@ export class MapComponent implements AfterViewInit {
         sticky: false,
         offset: [0, 0],
         opacity: 0.8,
-
         className: 'leaflet-tooltip-own'
-//ova metoda ?
       }).on('click', (event: any) => {
-        let info = new varijableEvenataMape(event.latlng, event.layerPoint, event.containerPoint, event.originalEvent);
-        console.log("click info = " + info.latlng, info.layerPoint, info.containerPoint, info.originalEvent);
-        
-        
+        for (let i = 0; i < zgKvartoviData.length; i++) {
+          console.log(JSON.stringify(zgKvartoviData[i].name));
+        }
       }).addTo(this.map);
 
     });

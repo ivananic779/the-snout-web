@@ -1,108 +1,92 @@
-export var zgKvartoviData: any = [
-    {
-      name: 'Britanac',
-      series: [
+export var zgKvartoviData: any =
+    [
+
+
+
+
         {
-          name: 'price_per_sqm',
-          value: 3237
+            name: 'Britanac',
+            series: [
+                {
+                    name: '01.02',
+                    value: 3237
+                },
+                {
+                    name: '01.03',
+                    value: 2545
+                },
+                {
+                    name: '01.04',
+                    value: 2344
+                },
+                {
+                    name: '01.05',
+                    value: 3237
+                },
+            ]
         },
+
         {
-          name: 'count',
-          value: 190
-        }
-      ]
-    },
-    {
-      name: 'Gornji grad',
-      series: [
-        {
-          name: 'price_per_sqm',
-          value: 3107
+            name: 'Središće',
+            series: [
+                {
+                    name: '01.02',
+                    value: 3500
+                },
+                {
+                    name: '01.03',
+                    value: 3200
+                },
+                {
+                    name: '01.04',
+                    value: 2300
+                },
+                {
+                    name: '01.05',
+                    value: 2100
+                },
+            ]
         },
-        {
-          name: 'count',
-          value: 97
-        }
-      ]
-    },
-    {
-      name: 'Tuškanac',
-      series: [
-        {
-          name: 'price_per_sqm',
-          value: 3090
-        },
-        {
-          name: 'count',
-          value: 90
-        }
-      ]
-    },
-    {
-      name: 'Središće',
-      series: [
-        {
-          name: 'price_per_sqm',
-          value: 3008
-        },
-        {
-          name: 'count',
-          value: 11
-        }
-      ]
-    },
-    {
-      name: 'Ribnjak',
-      series: [
-        {
-          name: 'price_per_sqm',
-          value: 2965
-        },
-        {
-          name: 'count',
-          value: 18
-        }
-      ]
-    },
-    {
-      name: 'Kraljičin zdenac',
-      series: [
-        {
-          name: 'price_per_sqm',
-          value: 2935
-        },
-        {
-          name: 'count',
-          value: 1
-        }
-      ]
-    },
-    {
-      name: 'Dolac',
-      series: [
-        {
-          name: 'price_per_sqm',
-          value: 2929
-        },
-        {
-          name: 'count',
-          value: 5
-        }
-      ]
-    },
-    {
-      name: 'Svetice',
-      series: [
-        {
-          name: 'price_per_sqm',
-          value: 2922
-        },
-        {
-          name: 'count',
-          value: 20
-        }
-      ]
-    },
+        // {
+        //     "hood": "Britanac",
+        //     "price_per_sqm": 3237,
+        //     "count": 190
+        // },
+        // {
+        //     "hood": "Gornji grad",
+        //     "price_per_sqm": 3107,
+        //     "count": 97
+        // },
+        // {
+        //     "hood": "Tuškanac",
+        //     "price_per_sqm": 3090,
+        //     "count": 90
+        // },
+        // {
+        //     "hood": "Središće",
+        //     "price_per_sqm": 3008,
+        //     "count": 11
+        // },
+        // {
+        //     "hood": "Ribnjak",
+        //     "price_per_sqm": 2965,
+        //     "count": 18
+        // },
+        // {
+        //     "hood": "Kraljičin zdenac",
+        //     "price_per_sqm": 2935,
+        //     "count": 1
+        // },
+        // {
+        //     "hood": "Dolac",
+        //     "price_per_sqm": 2929,
+        //     "count": 5
+        // },
+        // {
+        //     "hood": "Svetice",
+        //     "price_per_sqm": 2922,
+        //     "count": 20
+        // },
         // {
         //     "hood": "Gredice",
         //     "price_per_sqm": 2904,

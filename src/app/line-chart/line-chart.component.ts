@@ -8,9 +8,9 @@ import { Color, ScaleType } from '@swimlane/ngx-charts';
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.scss'],
 })
-export class LineChartComponent{
+export class LineChartComponent {
   zgKvartoviData: any[];
-  view: [number, number] = [400, 400];
+  view: [number, number] = [700 , 300];
 
   // options
   legend: boolean = true;
@@ -20,8 +20,8 @@ export class LineChartComponent{
   yAxis: boolean = true;
   showYAxisLabel: boolean = true;
   showXAxisLabel: boolean = true;
-  xAxisLabel: string = 'Year';
-  yAxisLabel: string = 'Population';
+  xAxisLabel: string = 'date';
+  yAxisLabel: string = 'price';
   timeline: boolean = true;
 
   colorScheme: Color = {
@@ -32,7 +32,7 @@ export class LineChartComponent{
   };
 
   constructor() {
-    Object.assign(this, { zgKvartoviData });
+    Object.assign(this,  {zgKvartoviData} );
   }
 
   onSelect(data): void {

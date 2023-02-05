@@ -6,7 +6,9 @@ import { zgKvartovi } from 'src/app/vars/zagreb_kvartovi'; '../../vars/zagreb_kv
 import { zgKvartoviData } from 'src/app/vars_data/zagreb_kvartovi_data';
 import { TooltipContent } from '../../klase/tooltip';
 import { varijableEvenataMape } from '../../klase/varijableEvenataMape';
-import { DialogComponent } from '../../dialog/dialog.component';
+import { DialogService } from 'primeng/dynamicdialog';
+import { LineChartComponent } from '../../line-chart/line-chart.component';
+
 
 
 
@@ -37,7 +39,7 @@ export class MapComponent implements AfterViewInit {
   private map!: L.Map | L.LayerGroup<any>;
 
   constructor(
-    private helperService: HelperService
+    private helperService: HelperService, private dialogService: DialogService
   ) { }
 
   ngAfterViewInit(): void {
@@ -92,6 +94,14 @@ export class MapComponent implements AfterViewInit {
 
     });
 
+    const config = {
+      data: zgKvartoviData,
+      xKey: 'name',
+      yKey: 'value',
+      groupBy: 'name',
+      seriesName: 'series'
+    };
+
     zgKvartovi.features.forEach((kvart: any) => {
       var title = kvart.properties.name;
       var row1 = kvart.properties.price_per_sqm;
@@ -100,36 +110,21 @@ export class MapComponent implements AfterViewInit {
       L.polygon(kvart.geometry.coordinates[0], this.stylePolygon(kvart)).bindTooltip(content.napraviHTML(), {
         permanent: false,
         direction: 'right',
-        sticky: false,
+        sticky: true,
         offset: [0, 0],
         opacity: 0.8,
         className: 'leaflet-tooltip-own'
-      }).on('click', (event: any) => {
-        for (let i = 0; i < zgKvartoviData.length; i++) {
-          console.log(JSON.stringify(zgKvartoviData[i].name));
-        }
+      }).on('dblclick', (event: any) => {
+        // console.log(zgKvartoviData);
+        this.dialogService.open(LineChartComponent, {
+          data: config
+    
+        })
       }).addTo(this.map);
-
     });
-
+    
     tiles.addTo(this.map);
   }
 
 
 }
-//****************************zadatak***********************
-// na vrhu naslov
-// cijena po m2
-// broj oglasa (count)
-// graf > 
-//click, mouseover, double click, mouseout => eventi za dodat na tooltip console log samo sa svim opcijama.
-// ****************************GRAF************************* 
-// Remark: Making tooltip interactive makes sense only if it is permanently displayed 
-//(option permanent: true) sta je nama false. Making nonpermanent tooltip interactive will eiher not work 
-//(when tooltip is completely outside marker) or will interfere with event processing for
-// marker (when tooltip covers marker).
-// ako dodamo graf na tooltip na klik ne moze. mozemo dodat samo ko jos jedan html element ali ne zeli ga 
-// zvat ko komponentu  <komponenta></komponenta> vidi dole.
-
-// ngx chart usage info : https://www.npmjs.com/package/ngx-line-chart
-// <ngx-line-chart [dataSets]="myDataSets" [xLabelFunction]="formXAxisValue.bind(this)"></ngx-line-chart>

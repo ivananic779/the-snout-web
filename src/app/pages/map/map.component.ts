@@ -14,6 +14,7 @@ import { LineChartComponent } from '../../line-chart/line-chart.component';
 
 
 
+
 export class PathOptions {
   stroke?: boolean | undefined;
   color?: string | undefined;
@@ -39,7 +40,7 @@ export class MapComponent implements AfterViewInit {
   private map!: L.Map | L.LayerGroup<any>;
 
   constructor(
-    private helperService: HelperService, private dialogService: DialogService
+    public helperService: HelperService, private dialogService: DialogService
   ) { }
 
   ngAfterViewInit(): void {
@@ -86,16 +87,17 @@ export class MapComponent implements AfterViewInit {
 
     zgKvartovi.features.forEach((kvart: any) => {
       zgKvartoviData.forEach((kvartData: any) => {
-        if (kvart.properties.name == kvartData.hood) {
-          kvart.properties.price_per_sqm = kvartData.price_per_sqm;
+        if (kvart.properties.name == kvartData.name) {
+          kvart.properties.price_per_sqm = kvartData.value;
           kvart.properties.count = kvartData.count;
+          kvart.properties.series = kvartData.series;
         }
       });
 
     });
 
-    const config = {
-      data: zgKvartoviData,
+    const chartConfig = {
+      data: {},
       xKey: 'name',
       yKey: 'value',
       groupBy: 'name',
@@ -104,7 +106,7 @@ export class MapComponent implements AfterViewInit {
 
     zgKvartovi.features.forEach((kvart: any) => {
       var title = kvart.properties.name;
-      var row1 = kvart.properties.price_per_sqm;
+      var row1 = kvart.properties.value;
       var row2 = kvart.properties.count;
       var content = new TooltipContent(title, row1, row2);
       L.polygon(kvart.geometry.coordinates[0], this.stylePolygon(kvart)).bindTooltip(content.napraviHTML(), {
@@ -113,16 +115,17 @@ export class MapComponent implements AfterViewInit {
         sticky: true,
         offset: [0, 0],
         opacity: 0.8,
-        className: 'leaflet-tooltip-own'
-      }).on('dblclick', (event: any) => {
-        // console.log(zgKvartoviData);
-        this.dialogService.open(LineChartComponent, {
-          data: config
-    
-        })
+        className: 'leaflet-tooltip-own',
+        properties: kvart.properties
+      }).on('click', (event: any) => {
+        console.log(event);
+        this.helperService.visible = true;
+        this.helperService.kurac = [];
+        chartConfig.data = event.target._tooltip.options.properties;
+        this.helperService.kurac.push(chartConfig.data);
       }).addTo(this.map);
     });
-    
+
     tiles.addTo(this.map);
   }
 

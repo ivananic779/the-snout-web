@@ -13,7 +13,6 @@ const routes: Routes = [
     component: MapComponent,
   },
 
-
 ];
 
 @NgModule({

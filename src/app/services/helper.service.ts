@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import * as geojson from 'geojson';
 import { zgKvartovi } from '../vars/zagreb_kvartovi';
-import { DialogService } from 'primeng/dynamicdialog';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class HelperService {
 
-  constructor(private dialogService: DialogService) { }
+  visible: boolean = false;
 
-  
+  constructor() { }
+
+  kurac:any[]=[];
 
   public flipCoordinates($geo_json_object: geojson.FeatureCollection) {
     // Flip long and lat
@@ -22,6 +24,9 @@ export class HelperService {
       });
     });
   }
+
+
+
 
 
 }

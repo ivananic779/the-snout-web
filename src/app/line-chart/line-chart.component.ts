@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { zgKvartoviData } from '../vars_data/zagreb_kvartovi_data';
 import { Color, ScaleType } from '@swimlane/ngx-charts';
+import { HelperService } from '../services/helper.service';
+import { TooltipContent } from '../klase/tooltip';
 
 
 @Component({
@@ -8,9 +9,9 @@ import { Color, ScaleType } from '@swimlane/ngx-charts';
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.scss'],
 })
-export class LineChartComponent {
+export class LineChartComponent implements OnInit {
   zgKvartoviData: any[];
-  view: [number, number] = [700 , 300];
+  view: [number, number] = [700, 300];
 
   // options
   legend: boolean = true;
@@ -31,9 +32,18 @@ export class LineChartComponent {
     domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
   };
 
-  constructor() {
-    Object.assign(this,  {zgKvartoviData} );
+  constructor(
+
+
+    public helperService: HelperService) {
+    console.log(helperService.visible)
   }
+  ngOnInit(): void {
+    Object.assign(this, this.helperService.kurac);
+    console.log(this)
+  }
+
+
 
   onSelect(data): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
@@ -46,4 +56,6 @@ export class LineChartComponent {
   onDeactivate(data): void {
     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
+
+
 }

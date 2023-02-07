@@ -2,181 +2,282 @@ export var zgKvartoviData: any =
     [
 
 
-
-
+        {
+            name: 'Centar',
+            series: [
+                {
+                    name: '01.02',
+                    value: 3237,
+                    count: 2
+                },
+                {
+                    name: '01.03',
+                    value: 2545,
+                    count: 3
+                },
+                {
+                    name: '01.04',
+                    value: 2344,
+                    count: 5,
+                },
+                {
+                    name: '01.05',
+                    value: 3237,
+                    count: 2
+                },
+            ]
+        },
         {
             name: 'Britanac',
             series: [
                 {
                     name: '01.02',
-                    value: 3237
-                },
-                {
-                    name: '01.03',
-                    value: 2545
-                },
-                {
-                    name: '01.04',
-                    value: 2344
-                },
-                {
-                    name: '01.05',
-                    value: 3237
-                },
+                    value: 3237,
+                    count: 190
+                }
             ]
         },
-
+        {
+            name: 'Gornji grad',
+            series: [
+                {
+                    name: '01.02',
+                    value: 3107,
+                    count: 97
+                }
+            ]
+        },
+        {
+            name: 'Tuškanac',
+            series: [
+                {
+                    name: '01.02',
+                    value: 3090,
+                    count: 90
+                }
+            ]
+        },
         {
             name: 'Središće',
             series: [
                 {
                     name: '01.02',
-                    value: 3500
+                    value: 3008,
+                    count: 11
+                }
+            ]
+        },
+        {
+            name: 'Ribnjak',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2965,
+                    count: 18
+                }
+            ]
+        },
+        {
+            name: 'Kraljičin zdenac',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2935,
+                    count: 1
+                }
+            ]
+        },
+        {
+            name: 'Dolac',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2929,
+                    count: 5
+                }
+            ]
+        },
+        {
+            name: 'Svetice',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2922,
+                    count: 20
+                }
+            ]
+        },
+        {
+            name: 'Gredice',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2904,
+                    count: 6
+                }
+            ]
+        },
+        {
+            name: 'Podbrežje',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2866,
+                    count: 3
+                }
+            ]
+        },
+        {
+            name: 'Kanal',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2805,
+                    count: 32
+                }
+            ]
+        },
+        {
+            name: 'Kraljevec',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2780,
+                    count: 9
+                }
+            ]
+        },
+        {
+            name: 'Šalata',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2774,
+                    count: 207
+                }
+            ]
+        },
+        {
+            name: 'Voćarsko naselje',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2681,
+                    count: 15
+                }
+            ]
+        },
+        {
+            name: 'Bundek',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2663,
+                    count: 2
+                }
+            ]
+        },
+        {
+            name: 'Donji grad',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2632,
+                    count: 1393
+                }
+            ]
+        },
+        {
+            name: 'Kaptol',
+            series: [
+                {
+                    name: '01.02',
+                    value: 265,
+                    count: 23
+                }
+            ]
+        },
+        {
+            name: 'Srebernjak',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2571,
+                    count: 103
+                }
+            ]
+        },
+        {
+            name: 'Pantovčak',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2563,
+                    count: 189
+                }
+            ]
+        },
+        {
+            name: 'Medveščak',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2542,
+                    count: 165
+                }
+            ]
+        },
+        {
+            name: 'Jarun',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2519,
+                    count: 72
+                }
+            ]
+        },
+        {
+            name: 'Šestinski vrh',
+            series: [
+                {
+                    name: '01.02',
+                    value: 251,
+                    count: 15
+                }
+            ]
+        },
+        {
+            name: 'Vrbani',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2505,
+                    count: 31
+                }
+            ]
+        },
+        {
+            name: 'Savica',
+            series: [
+                {
+                    name: '01.02',
+                    value: 2501,
+                    count: 59
                 },
                 {
                     name: '01.03',
-                    value: 3200
+                    value: 2585,
+                    count: 70
                 },
                 {
                     name: '01.04',
-                    value: 2300
-                },
-                {
-                    name: '01.05',
-                    value: 2100
-                },
+                    value: 3333,
+                    count: 11
+                }
             ]
         },
-        // {
-        //     "hood": "Britanac",
-        //     "price_per_sqm": 3237,
-        //     "count": 190
-        // },
-        // {
-        //     "hood": "Gornji grad",
-        //     "price_per_sqm": 3107,
-        //     "count": 97
-        // },
-        // {
-        //     "hood": "Tuškanac",
-        //     "price_per_sqm": 3090,
-        //     "count": 90
-        // },
-        // {
-        //     "hood": "Središće",
-        //     "price_per_sqm": 3008,
-        //     "count": 11
-        // },
-        // {
-        //     "hood": "Ribnjak",
-        //     "price_per_sqm": 2965,
-        //     "count": 18
-        // },
-        // {
-        //     "hood": "Kraljičin zdenac",
-        //     "price_per_sqm": 2935,
-        //     "count": 1
-        // },
-        // {
-        //     "hood": "Dolac",
-        //     "price_per_sqm": 2929,
-        //     "count": 5
-        // },
-        // {
-        //     "hood": "Svetice",
-        //     "price_per_sqm": 2922,
-        //     "count": 20
-        // },
-        // {
-        //     "hood": "Gredice",
-        //     "price_per_sqm": 2904,
-        //     "count": 6
-        // },
-        // {
-        //     "hood": "Podbrežje",
-        //     "price_per_sqm": 2866,
-        //     "count": 3
-        // },
-        // {
-        //     "hood": "Kanal",
-        //     "price_per_sqm": 2805,
-        //     "count": 32
-        // },
-        // {
-        //     "hood": "Kraljevec",
-        //     "price_per_sqm": 2780,
-        //     "count": 9
-        // },
-        // {
-        //     "hood": "Šalata",
-        //     "price_per_sqm": 2774,
-        //     "count": 207
-        // },
-        // {
-        //     "hood": "Voćarsko naselje",
-        //     "price_per_sqm": 2681,
-        //     "count": 15
-        // },
-        // {
-        //     "hood": "Zelengaj",
-        //     "price_per_sqm": 2665,
-        //     "count": 23
-        // },
-        // {
-        //     "hood": "Bundek",
-        //     "price_per_sqm": 2663,
-        //     "count": 2
-        // },
-        // {
-        //     "hood": "Donji grad",
-        //     "price_per_sqm": 2632,
-        //     "count": 1393
-        // },
-        // {
-        //     "hood": "Centar",
-        //     "price_per_sqm": 2628,
-        //     "count": 749
-        // },
-        // {
-        //     "hood": "Kaptol",
-        //     "price_per_sqm": 2625,
-        //     "count": 23
-        // },
-        // {
-        //     "hood": "Srebrnjak",
-        //     "price_per_sqm": 2571,
-        //     "count": 103
-        // },
-        // {
-        //     "hood": "Pantovčak",
-        //     "price_per_sqm": 2563,
-        //     "count": 189
-        // },
-        // {
-        //     "hood": "Medveščak",
-        //     "price_per_sqm": 2542,
-        //     "count": 165
-        // },
-        // {
-        //     "hood": "Jarun",
-        //     "price_per_sqm": 2519,
-        //     "count": 72
-        // },
-        // {
-        //     "hood": "Šestinski vrh",
-        //     "price_per_sqm": 2510,
-        //     "count": 15
-        // },
-        // {
-        //     "hood": "Vrbani",
-        //     "price_per_sqm": 2505,
-        //     "count": 31
-        // },
-        // {
-        //     "hood": "Savica",
-        //     "price_per_sqm": 2501,
-        //     "count": 59
-        // },
+
         // {
         //     "hood": "Gupčeva zvijezda",
         //     "price_per_sqm": 2460,

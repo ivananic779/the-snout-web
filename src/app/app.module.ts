@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DialogService } from 'primeng/dynamicdialog';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import {DialogModule} from 'primeng/dialog';
 
 
 
@@ -32,6 +33,7 @@ import { zgKvartoviData } from './vars_data/zagreb_kvartovi_data';
     NgxChartsModule,
     AccordionModule,
     DynamicDialogModule,
+    DialogModule,
     BrowserAnimationsModule,
 
 

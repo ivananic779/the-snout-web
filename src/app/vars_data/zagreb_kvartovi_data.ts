@@ -6,27 +6,38 @@ export var zgKvartoviData: any =
             name: 'Centar',
             series: [
                 {
-                    name: '01.02',
+                    name: '01.01',
                     value: 3237,
                     count: 2
                 },
                 {
-                    name: '01.03',
+                    name: '01.02',
                     value: 2545,
                     count: 3
                 },
                 {
-                    name: '01.04',
+                    name: '01.03',
                     value: 2344,
                     count: 5,
+                },
+                {
+                    name: '01.04',
+                    value: 3237,
+                    count: 2
                 },
                 {
                     name: '01.05',
                     value: 3237,
                     count: 2
                 },
+                {
+                    name: '01.06',
+                    value: 3237,
+                    count: 2
+                },
             ]
         },
+        
         {
             name: 'Britanac',
             series: [

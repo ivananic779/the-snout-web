@@ -36,11 +36,9 @@ export class LineChartComponent implements OnInit {
 
 
     public helperService: HelperService) {
-    console.log(helperService.visible)
   }
   ngOnInit(): void {
     Object.assign(this, this.helperService.kurac);
-    console.log(this)
   }
 
 

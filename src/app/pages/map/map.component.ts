@@ -88,8 +88,6 @@ export class MapComponent implements AfterViewInit {
     zgKvartovi.features.forEach((kvart: any) => {
       zgKvartoviData.forEach((kvartData: any) => {
         if (kvart.properties.name == kvartData.name) {
-          kvart.properties.price_per_sqm = kvartData.value;
-          kvart.properties.count = kvartData.count;
           kvart.properties.series = kvartData.series;
         }
       });
@@ -105,25 +103,29 @@ export class MapComponent implements AfterViewInit {
     };
 
     zgKvartovi.features.forEach((kvart: any) => {
-      var title = kvart.properties.name;
-      var row1 = kvart.properties.value;
-      var row2 = kvart.properties.count;
-      var content = new TooltipContent(title, row1, row2);
-      L.polygon(kvart.geometry.coordinates[0], this.stylePolygon(kvart)).bindTooltip(content.napraviHTML(), {
-        permanent: false,
-        direction: 'right',
-        sticky: true,
-        offset: [0, 0],
-        opacity: 0.8,
-        className: 'leaflet-tooltip-own',
-        properties: kvart.properties
-      }).on('click', (event: any) => {
-        console.log(event);
-        this.helperService.visible = true;
-        this.helperService.kurac = [];
-        chartConfig.data = event.target._tooltip.options.properties;
-        this.helperService.kurac.push(chartConfig.data);
-      }).addTo(this.map);
+      if (kvart.properties.series === undefined) {
+      } else {
+        var title = kvart.properties.name;
+        var row1 = kvart.properties.series[kvart.properties.series.length - 1].value;
+        var row2 = kvart.properties.series[kvart.properties.series.length - 1].count;
+        var content = new TooltipContent(title, row1, row2);
+        L.polygon(kvart.geometry.coordinates[0], this.stylePolygon(kvart)).bindTooltip(content.napraviHTML(), {
+          permanent: false,
+          direction: 'right',
+          sticky: true,
+          offset: [0, 0],
+          opacity: 0.8,
+          className: 'leaflet-tooltip-own',
+          properties: kvart.properties
+        }).on('click', (event: any) => {
+          this.helperService.visible = true;
+          this.helperService.kurac = [];
+          
+          
+          chartConfig.data = event.target._tooltip.options.properties;
+          this.helperService.kurac.push(chartConfig.data);
+        }).addTo(this.map);
+      }
     });
 
     tiles.addTo(this.map);
@@ -131,3 +133,5 @@ export class MapComponent implements AfterViewInit {
 
 
 }
+
+

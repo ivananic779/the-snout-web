@@ -1,5 +1,9 @@
-<p-dialog header="Title" [(visible)]="helperService.visible">
-  
+<p-dialog [(visible)]="helperService.visible">
+
+
+
+  <button class="btn btn-primary btn-lg" (click)="changeData1()">change period1</button>
+  <button class="btn btn-primary btn-lg" (click)="changeData2()">change period2</button>
   <ngx-charts-line-chart
   [view]="view"
   [scheme]="colorScheme"
@@ -11,7 +15,7 @@
   [xAxisLabel]="xAxisLabel"
   [yAxisLabel]="yAxisLabel"
   [timeline]="timeline"
-  [results]="this.helperService.kurac"
+  [results]="helperService.kurac"
   (select)="onSelect($event)"
   (activate)="onActivate($event)"
   (deactivate)="onDeactivate($event)"

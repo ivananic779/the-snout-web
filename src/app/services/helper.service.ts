@@ -1,18 +1,28 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import * as geojson from 'geojson';
 import { zgKvartovi } from '../vars/zagreb_kvartovi';
+import { zgKvartoviData } from '../vars_data/zagreb_kvartovi_data';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class HelperService {
+export class HelperService implements OnInit{
 
   visible: boolean = false;
 
   constructor() { }
+  ngOnInit(): void {
+  }
+trecaPomocna:any[] = [];
+  kurac: any[] = [];
 
-  kurac:any[]=[];
+
+  series2: any[] = [];
+
+
+
+
 
   public flipCoordinates($geo_json_object: geojson.FeatureCollection) {
     // Flip long and lat

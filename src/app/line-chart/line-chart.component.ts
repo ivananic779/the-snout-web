@@ -14,9 +14,9 @@ export class LineChartComponent implements OnInit {
   zgKvartoviData: any[];
   view: [number, number] = [700, 300];
 
-
-
   displayData: boolean = false;
+  placeholder = this.displayData ? this.opcijeDropdown[1].label : this.opcijeDropdown[0].label;
+
   changeData2() {
     if (!this.displayData) {
       let temp: any = [];
@@ -26,6 +26,7 @@ export class LineChartComponent implements OnInit {
       this.helperService.kurac = [...this.helperService.kurac];
       this.cd.detectChanges();
       this.displayData = true;
+      this.placeholder =this.opcijeDropdown[1].label;
     }
   }
   changeData1() {
@@ -37,8 +38,16 @@ export class LineChartComponent implements OnInit {
       this.helperService.kurac = [...this.helperService.kurac];
       this.cd.detectChanges();
       this.displayData = false;
+      this.placeholder = this.opcijeDropdown[0].label;
     }
   }
+  get opcijeDropdown() {
+    return [
+      { label: 'Prvi kvartal', action: this.changeData1.bind(this) },
+      { label: 'Drugi kvartal', action: this.changeData2.bind(this) }
+    ];
+  }
+
   // options
   legend: boolean = true;
   showLabels: boolean = true;

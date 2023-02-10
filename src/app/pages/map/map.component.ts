@@ -89,6 +89,7 @@ export class MapComponent implements AfterViewInit {
       zgKvartoviData.forEach((kvartData: any) => {
         if (kvart.properties.name == kvartData.name) {
           kvart.properties.series = kvartData.series;
+          kvart.properties.series2 = kvartData.series2
         }
       });
 
@@ -124,6 +125,7 @@ export class MapComponent implements AfterViewInit {
           
           chartConfig.data = event.target._tooltip.options.properties;
           this.helperService.kurac.push(chartConfig.data);
+
         }).addTo(this.map);
       }
     });

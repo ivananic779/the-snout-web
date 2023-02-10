@@ -1,9 +1,12 @@
 <p-dialog [(visible)]="helperService.visible">
+  <p-dropdown [options]="opcijeDropdown"
+              placeholder="{{placeholder}}">
+  <ng-template let-option pTemplate="item">
+    <div (click)="option.action()">{{option.label}}</div>
+  </ng-template>
+</p-dropdown>
 
 
-
-  <button class="btn btn-primary btn-lg" (click)="changeData1()">change period1</button>
-  <button class="btn btn-primary btn-lg" (click)="changeData2()">change period2</button>
   <ngx-charts-line-chart
   [view]="view"
   [scheme]="colorScheme"

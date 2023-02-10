@@ -17,27 +17,29 @@ export var zgKvartoviData: any =
                 },
                 {
                     name: '01.03',
-                    value: 2344,
-                    count: 5,
+                    value: 1145,
+                    count: 3
                 },
+            ],
+            series2: [
                 {
                     name: '01.04',
-                    value: 3237,
+                    value: 5537,
                     count: 2
                 },
                 {
                     name: '01.05',
-                    value: 3237,
-                    count: 2
+                    value: 6533,
+                    count: 3
                 },
                 {
                     name: '01.06',
-                    value: 3237,
-                    count: 2
+                    value: 5555,
+                    count: 3
                 },
+
             ]
         },
-        
         {
             name: 'Britanac',
             series: [
@@ -45,6 +47,33 @@ export var zgKvartoviData: any =
                     name: '01.02',
                     value: 3237,
                     count: 190
+                },
+                {
+                    name: '01.03',
+                    value: 9888,
+                    count: 189
+                },
+                {
+                    name: '01.04',
+                    value: 5689,
+                    count: 118
+                }
+            ],
+            series2: [
+                {
+                    name: '01.02',
+                    value: 8759,
+                    count: 90
+                },
+                {
+                    name: '01.03',
+                    value: 3940,
+                    count: 198
+                },
+                {
+                    name: '01.04',
+                    value: 7741,
+                    count: 176
                 }
             ]
         },
@@ -55,6 +84,33 @@ export var zgKvartoviData: any =
                     name: '01.02',
                     value: 3107,
                     count: 97
+                },
+                {
+                    name: '01.03',
+                    value: 5847,
+                    count: 86
+                },
+                {
+                    name: '01.04',
+                    value: 4724,
+                    count: 11
+                }
+            ],
+            series2: [
+                {
+                    name: '01.02',
+                    value: 1368,
+                    count: 23
+                },
+                {
+                    name: '01.03',
+                    value: 6541,
+                    count: 19
+                },
+                {
+                    name: '01.04',
+                    value: 9854,
+                    count: 27
                 }
             ]
         },
@@ -65,6 +121,33 @@ export var zgKvartoviData: any =
                     name: '01.02',
                     value: 3090,
                     count: 90
+                },
+                {
+                    name: '01.03',
+                    value: 5865,
+                    count: 32
+                },
+                {
+                    name: '01.04',
+                    value: 6849,
+                    count: 21
+                }
+            ],
+            series2: [
+                {
+                    name: '01.02',
+                    value: 6798,
+                    count: 90
+                },
+                {
+                    name: '01.03',
+                    value: 7589,
+                    count: 32
+                },
+                {
+                    name: '01.04',
+                    value: 5764,
+                    count: 21
                 }
             ]
         },
@@ -75,6 +158,33 @@ export var zgKvartoviData: any =
                     name: '01.02',
                     value: 3008,
                     count: 11
+                },
+                {
+                    name: '01.03',
+                    value: 5745,
+                    count: 78
+                },
+                {
+                    name: '01.04',
+                    value: 4983,
+                    count: 56
+                }
+            ],
+            series2: [
+                {
+                    name: '01.02',
+                    value: 8923,
+                    count: 89
+                },
+                {
+                    name: '01.03',
+                    value: 5745,
+                    count: 78
+                },
+                {
+                    name: '01.04',
+                    value: 4983,
+                    count: 56
                 }
             ]
         },
@@ -85,6 +195,33 @@ export var zgKvartoviData: any =
                     name: '01.02',
                     value: 2965,
                     count: 18
+                },
+                {
+                    name: '01.03',
+                    value: 2724,
+                    count: 26
+                },
+                {
+                    name: '01.04',
+                    value: 3789,
+                    count: 8
+                }
+            ],
+            series2: [
+                {
+                    name: '01.02',
+                    value: 1249,
+                    count: 73
+                },
+                {
+                    name: '01.03',
+                    value: 3967,
+                    count: 60
+                },
+                {
+                    name: '01.04',
+                    value: 4832,
+                    count: 51
                 }
             ]
         },
@@ -95,6 +232,33 @@ export var zgKvartoviData: any =
                     name: '01.02',
                     value: 2935,
                     count: 1
+                },
+                {
+                    name: '01.03',
+                    value: 3183,
+                    count: 12
+                },
+                {
+                    name: '01.04',
+                    value: 4102,
+                    count: 4
+                }
+            ],
+            series2: [
+                {
+                    name: '01.02',
+                    value: 4361,
+                    count: 85
+                },
+                {
+                    name: '01.03',
+                    value: 5982,
+                    count: 92
+                },
+                {
+                    name: '01.04',
+                    value: 4716,
+                    count: 77
                 }
             ]
         },
@@ -105,6 +269,33 @@ export var zgKvartoviData: any =
                     name: '01.02',
                     value: 2929,
                     count: 5
+                },
+                {
+                    name: '01.03',
+                    value: 3738,
+                    count: 6
+                },
+                {
+                    name: '01.04',
+                    value: 4224,
+                    count: 9
+                }
+            ],
+            series2: [
+                {
+                    name: '01.02',
+                    value: 6348,
+                    count: 27
+                },
+                {
+                    name: '01.03',
+                    value: 5871,
+                    count: 18
+                },
+                {
+                    name: '01.04',
+                    value: 7209,
+                    count: 29
                 }
             ]
         },
@@ -115,179 +306,201 @@ export var zgKvartoviData: any =
                     name: '01.02',
                     value: 2922,
                     count: 20
-                }
-            ]
-        },
-        {
-            name: 'Gredice',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2904,
-                    count: 6
-                }
-            ]
-        },
-        {
-            name: 'Podbrežje',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2866,
-                    count: 3
-                }
-            ]
-        },
-        {
-            name: 'Kanal',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2805,
-                    count: 32
-                }
-            ]
-        },
-        {
-            name: 'Kraljevec',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2780,
-                    count: 9
-                }
-            ]
-        },
-        {
-            name: 'Šalata',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2774,
-                    count: 207
-                }
-            ]
-        },
-        {
-            name: 'Voćarsko naselje',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2681,
-                    count: 15
-                }
-            ]
-        },
-        {
-            name: 'Bundek',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2663,
-                    count: 2
-                }
-            ]
-        },
-        {
-            name: 'Donji grad',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2632,
-                    count: 1393
-                }
-            ]
-        },
-        {
-            name: 'Kaptol',
-            series: [
-                {
-                    name: '01.02',
-                    value: 265,
-                    count: 23
-                }
-            ]
-        },
-        {
-            name: 'Srebernjak',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2571,
-                    count: 103
-                }
-            ]
-        },
-        {
-            name: 'Pantovčak',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2563,
-                    count: 189
-                }
-            ]
-        },
-        {
-            name: 'Medveščak',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2542,
-                    count: 165
-                }
-            ]
-        },
-        {
-            name: 'Jarun',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2519,
-                    count: 72
-                }
-            ]
-        },
-        {
-            name: 'Šestinski vrh',
-            series: [
-                {
-                    name: '01.02',
-                    value: 251,
-                    count: 15
-                }
-            ]
-        },
-        {
-            name: 'Vrbani',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2505,
-                    count: 31
-                }
-            ]
-        },
-        {
-            name: 'Savica',
-            series: [
-                {
-                    name: '01.02',
-                    value: 2501,
-                    count: 59
                 },
                 {
                     name: '01.03',
-                    value: 2585,
-                    count: 70
+                    value: 3575,
+                    count: 19
                 },
                 {
                     name: '01.04',
-                    value: 3333,
+                    value: 4397,
                     count: 11
                 }
+            ],
+            series2: [
+                {
+                    name: '01.02',
+                    value: 4168,
+                    count: 57
+                },
+                {
+                    name: '01.03',
+                    value: 5236,
+                    count: 65
+                },
             ]
         },
+        // {
+        //     name: 'Gredice',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2904,
+        //             count: 6
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Podbrežje',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2866,
+        //             count: 3
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Kanal',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2805,
+        //             count: 32
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Kraljevec',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2780,
+        //             count: 9
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Šalata',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2774,
+        //             count: 207
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Voćarsko naselje',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2681,
+        //             count: 15
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Bundek',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2663,
+        //             count: 2
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Donji grad',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2632,
+        //             count: 1393
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Kaptol',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 265,
+        //             count: 23
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Srebernjak',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2571,
+        //             count: 103
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Pantovčak',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2563,
+        //             count: 189
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Medveščak',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2542,
+        //             count: 165
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Jarun',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2519,
+        //             count: 72
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Šestinski vrh',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 251,
+        //             count: 15
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Vrbani',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2505,
+        //             count: 31
+        //         }
+        //     ]
+        // },
+        // {
+        //     name: 'Savica',
+        //     series: [
+        //         {
+        //             name: '01.02',
+        //             value: 2501,
+        //             count: 59
+        //         },
+        //         {
+        //             name: '01.03',
+        //             value: 2585,
+        //             count: 70
+        //         },
+        //         {
+        //             name: '01.04',
+        //             value: 3333,
+        //             count: 11
+        //         }
+        //     ]
+        // },
 
         // {
         //     "hood": "Gupčeva zvijezda",

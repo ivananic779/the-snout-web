@@ -9,6 +9,11 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DialogService } from 'primeng/dynamicdialog';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import {DialogModule} from 'primeng/dialog';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 
@@ -17,6 +22,7 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './pages/map/map.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { zgKvartoviData } from './vars_data/zagreb_kvartovi_data';
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -35,6 +41,11 @@ import { zgKvartoviData } from './vars_data/zagreb_kvartovi_data';
     DynamicDialogModule,
     DialogModule,
     BrowserAnimationsModule,
+    DropdownModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatIconModule
 
 
 

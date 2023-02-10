@@ -2,7 +2,7 @@
   <p-dropdown [options]="opcijeDropdown"
               placeholder="{{placeholder}}">
   <ng-template let-option pTemplate="item">
-    <div (click)="option.action()">{{option.label}}</div>
+    <div (click)="option.action()" style="cursor: pointer;">{{option.label}}</div>
   </ng-template>
 </p-dropdown>
 

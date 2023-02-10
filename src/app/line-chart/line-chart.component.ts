@@ -17,18 +17,6 @@ export class LineChartComponent implements OnInit {
   displayData: boolean = false;
   placeholder = this.displayData ? this.opcijeDropdown[1].label : this.opcijeDropdown[0].label;
 
-  changeData2() {
-    if (!this.displayData) {
-      let temp: any = [];
-      temp = this.helperService.kurac[0].series
-      this.helperService.kurac[0].series = this.helperService.kurac[0].series2
-      this.helperService.kurac[0].series2 = temp
-      this.helperService.kurac = [...this.helperService.kurac];
-      this.cd.detectChanges();
-      this.displayData = true;
-      this.placeholder =this.opcijeDropdown[1].label;
-    }
-  }
   changeData1() {
     if (this.displayData) {
       let temp: any = [];
@@ -39,6 +27,18 @@ export class LineChartComponent implements OnInit {
       this.cd.detectChanges();
       this.displayData = false;
       this.placeholder = this.opcijeDropdown[0].label;
+    }
+  }
+  changeData2() {
+    if (!this.displayData) {
+      let temp: any = [];
+      temp = this.helperService.kurac[0].series
+      this.helperService.kurac[0].series = this.helperService.kurac[0].series2
+      this.helperService.kurac[0].series2 = temp
+      this.helperService.kurac = [...this.helperService.kurac];
+      this.cd.detectChanges();
+      this.displayData = true;
+      this.placeholder =this.opcijeDropdown[1].label;
     }
   }
   get opcijeDropdown() {

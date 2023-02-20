@@ -1,11 +1,6 @@
 <p-dialog [(visible)]="helperService.visible">
-  <p-dropdown [options]="opcijeDropdown"
-              placeholder="{{placeholder}}">
-  <ng-template let-option pTemplate="item">
-    <div (click)="option.action()" style="cursor: pointer;">{{option.label}}</div>
-  </ng-template>
+  <p-dropdown [options]="opcije" [(ngModel)]="odabranaOpcija" optionLabel="name" (onChange)="test($event)">
 </p-dropdown>
-
 
   <ngx-charts-line-chart
   [view]="view"

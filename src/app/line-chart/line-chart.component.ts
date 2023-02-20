@@ -14,39 +14,14 @@ export class LineChartComponent implements OnInit {
   zgKvartoviData: any[];
   view: [number, number] = [700, 300];
 
-  displayData: boolean = false;
-  placeholder = this.displayData ? this.opcijeDropdown[1].label : this.opcijeDropdown[0].label;
+  opcije: any = [
+    { name: 'jedno', code: 'jednomjesecni' },
+    { name: 'tro', code: 'tromjsecni' },
+    { name: 'polu', code: 'polugodisnji' },
+    { name: 'godi', code: 'godisnji' }
+  ];
 
-  changeData1() {
-    if (this.displayData) {
-      let temp: any = [];
-      temp = this.helperService.kurac[0].series2;
-      this.helperService.kurac[0].series2 = this.helperService.kurac[0].series;
-      this.helperService.kurac[0].series = temp;
-      this.helperService.kurac = [...this.helperService.kurac];
-      this.cd.detectChanges();
-      this.displayData = false;
-      this.placeholder = this.opcijeDropdown[0].label;
-    }
-  }
-  changeData2() {
-    if (!this.displayData) {
-      let temp: any = [];
-      temp = this.helperService.kurac[0].series
-      this.helperService.kurac[0].series = this.helperService.kurac[0].series2
-      this.helperService.kurac[0].series2 = temp
-      this.helperService.kurac = [...this.helperService.kurac];
-      this.cd.detectChanges();
-      this.displayData = true;
-      this.placeholder =this.opcijeDropdown[1].label;
-    }
-  }
-  get opcijeDropdown() {
-    return [
-      { label: 'Prvi kvartal', action: this.changeData1.bind(this) },
-      { label: 'Drugi kvartal', action: this.changeData2.bind(this) }
-    ];
-  }
+  odabranaOpcija: any;
 
   // options
   legend: boolean = true;
@@ -85,6 +60,19 @@ export class LineChartComponent implements OnInit {
 
   onDeactivate(data): void {
     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+  }
+
+  test($event: any): void {
+    this.helperService.kurac[0].availableSeries.forEach(series => {
+      if (series.name == $event.value.code) {
+        this.helperService.kurac[0].series = series.series;
+        this.cd.detectChanges();
+      }
+    });
+
+    this.helperService.kurac = [...this.helperService.kurac];
+
+    console.log(this.helperService.kurac);
   }
 
 }

@@ -1,7 +1,5 @@
 export var zgKvartoviData: any =
     [
-
-
         {
             name: 'Centar',
             series: [
@@ -21,23 +19,87 @@ export var zgKvartoviData: any =
                     count: 3
                 },
             ],
-            series2: [
+            availableSeries: [
                 {
-                    name: '01.04',
-                    value: 5537,
-                    count: 2
+                    name: 'jednomjesecni',
+                    series: [
+                        {
+                            name: '01.01',
+                            value: 1111,
+                            count: 2
+                        },
+                        {
+                            name: '01.02',
+                            value: 2222,
+                            count: 3
+                        },
+                        {
+                            name: '01.03',
+                            value: 3333,
+                            count: 3
+                        }
+                    ]
                 },
                 {
-                    name: '01.05',
-                    value: 6533,
-                    count: 3
+                    name: 'tromjsecni',
+                    series: [
+                        {
+                            name: '01.01',
+                            value: 4444,
+                            count: 2
+                        },
+                        {
+                            name: '01.02',
+                            value: 5555,
+                            count: 3
+                        },
+                        {
+                            name: '01.03',
+                            value: 6666,
+                            count: 3
+                        }
+                    ]
                 },
                 {
-                    name: '01.06',
-                    value: 5555,
-                    count: 3
+                    name: 'polugodisnji',
+                    series: [
+                        {
+                            name: '01.01',
+                            value: 3237,
+                            count: 2
+                        },
+                        {
+                            name: '01.02',
+                            value: 2545,
+                            count: 3
+                        },
+                        {
+                            name: '01.03',
+                            value: 1145,
+                            count: 3
+                        }
+                    ]
                 },
-
+                {
+                    name: 'godisnji',
+                    series: [
+                        {
+                            name: '01.01',
+                            value: 3237,
+                            count: 2
+                        },
+                        {
+                            name: '01.02',
+                            value: 2545,
+                            count: 3
+                        },
+                        {
+                            name: '01.03',
+                            value: 1145,
+                            count: 3
+                        }
+                    ]
+                },
             ]
         },
         {

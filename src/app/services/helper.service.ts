@@ -14,11 +14,11 @@ export class HelperService implements OnInit{
   constructor() { }
   ngOnInit(): void {
   }
-trecaPomocna:any[] = [];
+
   kurac: any[] = [];
 
 
-  series2: any[] = [];
+
 
 
 

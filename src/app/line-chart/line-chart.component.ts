@@ -22,6 +22,7 @@ export class LineChartComponent implements OnInit {
   ];
 
   odabranaOpcija: any;
+  showAllCharts = false;
 
   // options
   legend: boolean = true;
@@ -75,4 +76,40 @@ export class LineChartComponent implements OnInit {
     console.log(this.helperService.kurac);
   }
 
+
+
+
+  prvaIfAllCharts1(): void {
+
+    this.helperService.kurac = this.helperService.kurac[0].availableSeries;
+    this.helperService.kurac = [... this.helperService.kurac];
+ 
+    }
+
+drugaIfAllCharts(){
+  this.helperService.kurac[0].availableSeries[0].series = this.helperService.kurac;
+  console.log("drugi klik proso");
+
+
 }
+
+numClicks = 1;
+IfLogikaAllCharts() {
+  this.numClicks++;
+  if (this.numClicks % 2 === 0) {
+    this.prvaIfAllCharts1();
+  } else {
+    this.drugaIfAllCharts();
+  }
+}
+
+
+
+
+
+
+
+  }
+
+
+

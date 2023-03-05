@@ -1,13 +1,11 @@
 import { Injectable, OnInit } from '@angular/core';
 import * as geojson from 'geojson';
-import { zgKvartovi } from '../vars/zagreb_kvartovi';
-import { zgKvartoviData } from '../vars_data/zagreb_kvartovi_data';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class HelperService implements OnInit{
+export class HelperService implements OnInit {
 
   visible: boolean = false;
 
@@ -15,14 +13,11 @@ export class HelperService implements OnInit{
   ngOnInit(): void {
   }
 
-  kurac: any[] = [];
-
-
-
-
-
-
-
+  currentGraph: any[] = [];
+  currentGraph2: any[] = [];
+  currentGraph3: any[] = [];
+  currentGraph4: any[] = [];
+  currentAvailableSeries: any[] = [];
 
   public flipCoordinates($geo_json_object: geojson.FeatureCollection) {
     // Flip long and lat
@@ -34,11 +29,6 @@ export class HelperService implements OnInit{
       });
     });
   }
-
-
-
-
-
 }
 
 

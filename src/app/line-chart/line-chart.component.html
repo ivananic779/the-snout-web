@@ -1,24 +1,46 @@
 <p-dialog [(visible)]="helperService.visible">
-  <button (click)="IfLogikaAllCharts()">doisnaoodansda</button>
-  <p-dropdown [options]="opcije" [(ngModel)]="odabranaOpcija" optionLabel="name" (onChange)="test($event)">
-</p-dropdown>
+  <div class="row">
+    <button (click)="IfLogikaAllCharts()">doisnaoodansda</button>
+    <p-dropdown *ngIf="!showingAll" [options]="opcije" [(ngModel)]="odabranaOpcija" optionLabel="name" (onChange)="test($event)" [showClear]="true">
+    </p-dropdown>
+  </div>
 
-  <ngx-charts-line-chart
-  [view]="view"
-  [scheme]="colorScheme"
-  [legend]="legend"
-  [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel"
-  [xAxis]="xAxis"
-  [yAxis]="yAxis"
-  [xAxisLabel]="xAxisLabel"
-  [yAxisLabel]="yAxisLabel"
-  [timeline]="timeline"
-  [results]="helperService.kurac"
-  (select)="onSelect($event)"
-  (activate)="onActivate($event)"
-  (deactivate)="onDeactivate($event)"
-  >
-</ngx-charts-line-chart>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <ngx-charts-line-chart [view]="view" [scheme]="colorScheme" [legend]="legend" [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel" [xAxis]="xAxis" [yAxis]="yAxis" [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel" [timeline]="timeline" [results]="helperService.currentGraph"
+        (select)="onSelect($event)" (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
+      </ngx-charts-line-chart>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <ngx-charts-line-chart *ngIf="showingAll" [view]="view" [scheme]="colorScheme" [legend]="legend"
+        [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxis]="xAxis" [yAxis]="yAxis"
+        [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [timeline]="timeline"
+        [results]="helperService.currentGraph2" (select)="onSelect($event)" (activate)="onActivate($event)"
+        (deactivate)="onDeactivate($event)">
+      </ngx-charts-line-chart>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <ngx-charts-line-chart *ngIf="showingAll" [view]="view" [scheme]="colorScheme" [legend]="legend"
+        [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxis]="xAxis" [yAxis]="yAxis"
+        [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [timeline]="timeline"
+        [results]="helperService.currentGraph3" (select)="onSelect($event)" (activate)="onActivate($event)"
+        (deactivate)="onDeactivate($event)">
+      </ngx-charts-line-chart>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <ngx-charts-line-chart *ngIf="showingAll" [view]="view" [scheme]="colorScheme" [legend]="legend"
+        [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxis]="xAxis" [yAxis]="yAxis"
+        [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [timeline]="timeline"
+        [results]="helperService.currentGraph4" (select)="onSelect($event)" (activate)="onActivate($event)"
+        (deactivate)="onDeactivate($event)">
+      </ngx-charts-line-chart>
+    </div>
+  </div>
 </p-dialog>
-

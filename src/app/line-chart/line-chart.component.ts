@@ -1,8 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Color, ScaleType } from '@swimlane/ngx-charts';
 import { HelperService } from '../services/helper.service';
-import { TooltipContent } from '../klase/tooltip';
-import { Subject } from 'rxjs';
 
 
 @Component({
@@ -12,7 +10,8 @@ import { Subject } from 'rxjs';
 })
 export class LineChartComponent implements OnInit {
   zgKvartoviData: any[];
-  view: [number, number] = [700, 300];
+  view: [number, number] = [1200, 800];
+  showingAll: Boolean = false;
 
   opcije: any = [
     { name: 'jedno', code: 'jednomjesecni' },
@@ -48,7 +47,12 @@ export class LineChartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    Object.assign(this, this.helperService.kurac);
+    this.helperService.currentAvailableSeries = this.helperService.currentGraph[0].availableSeries;
+    if (this.showingAll) {
+      this.view = [700, 400];
+    } else {
+      this.view = [1200, 800];
+    }
   }
 
   onSelect(data): void {
@@ -64,52 +68,41 @@ export class LineChartComponent implements OnInit {
   }
 
   test($event: any): void {
-    this.helperService.kurac[0].availableSeries.forEach(series => {
+    this.helperService.currentAvailableSeries.forEach(series => {
       if (series.name == $event.value.code) {
-        this.helperService.kurac[0].series = series.series;
+        this.helperService.currentGraph[0].series = series.series;
         this.cd.detectChanges();
       }
     });
 
-    this.helperService.kurac = [...this.helperService.kurac];
+    this.helperService.currentGraph = [...this.helperService.currentGraph];
 
-    console.log(this.helperService.kurac);
+    console.log(this.helperService.currentGraph);
   }
-
-
-
 
   prvaIfAllCharts1(): void {
+    this.helperService.currentGraph = this.helperService.currentGraph[0].availableSeries;
+    this.helperService.currentGraph = [... this.helperService.currentGraph];
+  }
 
-    this.helperService.kurac = this.helperService.kurac[0].availableSeries;
-    this.helperService.kurac = [... this.helperService.kurac];
- 
+  drugaIfAllCharts() {
+    this.helperService.currentGraph[0].availableSeries[0].series = this.helperService.currentGraph;
+    console.log("drugi klik proso");
+  }
+
+  IfLogikaAllCharts() {
+    this.showingAll = !this.showingAll;
+
+    if (this.showingAll) {
+      this.helperService.currentGraph[0] = this.helperService.currentAvailableSeries[0];
+      this.helperService.currentGraph2[0] = this.helperService.currentAvailableSeries[1];
+      this.helperService.currentGraph3[0] = this.helperService.currentAvailableSeries[2];
+      this.helperService.currentGraph4[0] = this.helperService.currentAvailableSeries[3];
+    } else {
+      this.helperService.currentGraph[0] = this.helperService.currentAvailableSeries[0];
     }
-
-drugaIfAllCharts(){
-  this.helperService.kurac[0].availableSeries[0].series = this.helperService.kurac;
-  console.log("drugi klik proso");
-
-
-}
-
-numClicks = 1;
-IfLogikaAllCharts() {
-  this.numClicks++;
-  if (this.numClicks % 2 === 0) {
-    this.prvaIfAllCharts1();
-  } else {
-    this.drugaIfAllCharts();
   }
 }
-
-
-
-
-
-
-
-  }
 
 
 

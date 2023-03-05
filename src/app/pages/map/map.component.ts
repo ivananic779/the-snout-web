@@ -1,18 +1,10 @@
-import { HtmlParser } from '@angular/compiler';
 import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
 import { HelperService } from 'src/app/services/helper.service';
 import { zgKvartovi } from 'src/app/vars/zagreb_kvartovi'; '../../vars/zagreb_kvartovi'
 import { zgKvartoviData } from 'src/app/vars_data/zagreb_kvartovi_data';
 import { TooltipContent } from '../../klase/tooltip';
-import { varijableEvenataMape } from '../../klase/varijableEvenataMape';
 import { DialogService } from 'primeng/dynamicdialog';
-import { LineChartComponent } from '../../line-chart/line-chart.component';
-
-
-
-
-
 
 
 export class PathOptions {
@@ -70,9 +62,6 @@ export class MapComponent implements AfterViewInit {
     return pathOptionsObj;
   }
 
-
-
-
   private initMap(): void {
     this.map = L.map('map', {
       center: [45.815399, 15.966568],
@@ -120,12 +109,10 @@ export class MapComponent implements AfterViewInit {
           properties: kvart.properties
         }).on('click', (event: any) => {
           this.helperService.visible = true;
-          this.helperService.kurac = [];
-          
-          
-          chartConfig.data = event.target._tooltip.options.properties;
-          this.helperService.kurac.push(chartConfig.data);
+          this.helperService.currentGraph = [];
 
+          chartConfig.data = event.target._tooltip.options.properties;
+          this.helperService.currentGraph.push(chartConfig.data);
         }).addTo(this.map);
       }
     });

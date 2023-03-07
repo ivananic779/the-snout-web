@@ -35,6 +35,44 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .p-dialog {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
+    background-color: #2a0247 !important;
+    opacity: 90%;
+    
 }
+
+.p-dialog-content{
+    background-color:#2a0247 !important;
+}
+.p-dialog-header{
+    background-color: #2a0247 !important;
+}
+
+
+.ngx-charts text { fill: #F500F5;
+font-size: larger; }
+
+.ngx-charts line{
+    size: 6px;
+}
+
+.p-dropdown-open{
+
+  border-radius: 80%;  
+}
+
+.btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
+    background-color: #F500F5 !important;
+    height: 54px;
+    width: auto;
+}
+
+.p-dropdown, .p-dropdown-items{
+    /* Set the border radius to 5 pixels */
+background-color: #F500F5 !important;
+-webkit-text-fill-color: #ffffff;
+}
+
+
+//dodati styling color na tick na X i na Legend jer se ne vidi 

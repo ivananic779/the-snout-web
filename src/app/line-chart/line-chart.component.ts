@@ -3,6 +3,8 @@ import { Color, ScaleType } from '@swimlane/ngx-charts';
 import { HelperService } from '../services/helper.service';
 
 
+
+
 @Component({
   selector: 'app-line-chart',
   templateUrl: './line-chart.component.html',
@@ -39,7 +41,7 @@ export class LineChartComponent implements OnInit {
     name: 'myScheme',
     selectable: true,
     group: ScaleType.Ordinal,
-    domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
+    domain: ['#F500F5', '#E44D25', '##EF1A11', '#7aa3e5', '#a8385d', '#aae3f5']
   };
   constructor(
     public helperService: HelperService,
@@ -47,11 +49,12 @@ export class LineChartComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.helperService.currentAvailableSeries = this.helperService.currentGraph[0].availableSeries;
     if (this.showingAll) {
-      this.view = [700, 400];
+      this.view = [200, 200];
     } else {
-      this.view = [1200, 800];
+      this.view = [600, 300];
     }
   }
 
@@ -102,7 +105,10 @@ export class LineChartComponent implements OnInit {
       this.helperService.currentGraph[0] = this.helperService.currentAvailableSeries[0];
     }
   }
+
+
 }
+
 
 
 

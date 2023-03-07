@@ -1,15 +1,15 @@
 <p-dialog [(visible)]="helperService.visible">
-  <div class="row">
-    <button (click)="IfLogikaAllCharts()">doisnaoodansda</button>
-    <p-dropdown *ngIf="!showingAll" [options]="opcije" [(ngModel)]="odabranaOpcija" optionLabel="name" (onChange)="test($event)" [showClear]="true">
-    </p-dropdown>
-  </div>
+  <p-dropdown *ngIf="!showingAll" [options]="opcije" [(ngModel)]="odabranaOpcija" optionLabel="name" (onChange)="test($event)" >
+  </p-dropdown>
+  
+      <button (click)="IfLogikaAllCharts()" class="btn btn-danger">Pokazi Sve Grafove</button>
+
 
   <div class="row">
     <div class="col-12 col-md-6">
       <ngx-charts-line-chart [view]="view" [scheme]="colorScheme" [legend]="legend" [showXAxisLabel]="showXAxisLabel"
         [showYAxisLabel]="showYAxisLabel" [xAxis]="xAxis" [yAxis]="yAxis" [xAxisLabel]="xAxisLabel"
-        [yAxisLabel]="yAxisLabel" [timeline]="timeline" [results]="helperService.currentGraph"
+        [yAxisLabel]="yAxisLabel" [timeline]="timeline" [results]="helperService.currentGraph" 
         (select)="onSelect($event)" (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
       </ngx-charts-line-chart>
     </div>
